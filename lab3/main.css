@@ -1,0 +1,46 @@
+
+#car-registration-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"] {
+    margin: 8px 0;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: rgb(245, 138, 138);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+@media screen and (min-width: 600px) {
+    label {
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 599px) {
+    label {
+        display: none;
+    }
+
+    input::placeholder {
+        font-style: italic;
+    }
+}
