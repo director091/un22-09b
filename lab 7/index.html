@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>калькулятор</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="styles.css" />
+        
+</head>
+<body>
+       
+        <div class="shell">
+            
+            <input type="text" class="display" id="disp" value="" /><br>
+            <div class="buttons">
+                <button class="operator" onclick="signchange()">+/-</button>
+                <button class="redclear" onclick="ClearD_C()">C</button>
+                <button class="redclear" onclick="ClearD_CE()">CE</button>
+                <button class="redclear" onclick="bspace()"><-</button>
+
+                <button class="operator" onclick="inverse_proposition()">1/x</button>
+                <button class="operator" onclick="sqrt()">&#8730;</button>
+                <button class="operator" onclick="percent()">%</button>
+                <button onclick="op('divide')" class="operator">&#247;</button>
+
+                <button onclick="ToDisp(7)">7</button>
+                <button onclick="ToDisp(8)">8</button>
+                <button onclick="ToDisp(9)">9</button>
+                <button onclick="op('multiply')" class="operator">&#215;</button>
+
+                <button onclick="ToDisp(4)">4</button>
+                <button onclick="ToDisp(5)">5</button>
+                <button onclick="ToDisp(6)">6</button>
+                <button onclick="op('minus')" class="operator">-</button>
+
+                <button onclick="ToDisp(1)">1</button>
+                <button onclick="ToDisp(2)">2</button>
+                <button onclick="ToDisp(3)">3</button>
+                <button onclick="op('plus')" class="plus operator">+</button>
+
+                <button onclick="ToDisp(0)">0</button>
+                <button onclick="ToDisp('.')" class="decimal">.</button>
+                <button class="operator" onclick="equals(operation)">=</button>
+            </div>
+        </div>
+
+
+        <script src="script.js"></script>
+<body>
+    
+</body>
+</html>
