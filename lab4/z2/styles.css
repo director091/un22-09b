@@ -1,0 +1,84 @@
+/* Основные стили часов */
+.clock {
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стили для центральной точки */
+.center-dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* Стили стрелок */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+}
+
+.hour-hand {
+  width: 5px;
+  height: 50px;
+  background-color: black;
+  animation: hour-spin 43200s infinite linear; /* 12 часов для полного оборота */
+}
+
+.minute-hand {
+  width: 3px;
+  height: 70px;
+  background-color: black;
+  animation: minute-spin 3600s infinite linear; /* 60 минут для полного оборота */
+}
+
+.second-hand {
+  width: 2px;
+  height: 90px;
+  background-color: red;
+  animation: second-spin 60s infinite linear; /* 60 секунд для полного оборота */
+}
+
+/* Анимации для стрелок */
+@keyframes hour-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes minute-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes second-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Стили для цифр циферблата */
+.number {
+position: absolute;
+width: 30px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+font-family: Arial, sans-serif;
+font-size: 20px;
+font-weight: bold;
+transform: translate(-50%, -50%);
+}
+
+.number-12 {top: 5%; left: 50%;}
+.number-3 {top: 50%; right: -10%;}
+.number-6 {bottom: -10%; left: 50%;}
+.number-9 {top: 50%; left: 5%;}
