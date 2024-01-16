@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма регистрации авто для продажи</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="normalize.css" />
+ <style>
+        /* Общие стили /
+        #car-registration-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"] {
+            margin: 8px 0;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        / Стили для десктопной версии /
+        @media screen and (min-width: 600px) {
+            label {
+                margin-top: 10px;
+            }
+        }
+
+        / Стили для мобильной версии */
+        @media screen and (max-width: 599px) {
+            label {
+                display: none;
+            }
+
+            input::placeholder {
+                font-style: italic;
+            }
+        }
+
+        #message {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <form id="car-registration-form">
+        <label for="make">Марка автомобиля</label>
+        <input type="text" id="make" name="make" placeholder="Марка автомобиля">
+
+        <label for="model">Модель</label>
+        <input type="text" id="model" name="model" placeholder="Модель">
+
+        <label for="year">Год выпуска</label>
+        <input type="number" id="year" name="year" placeholder="Год выпуска">
+
+        <label for="price">Цена</label>
+        <input type="text" id="price" name="price" placeholder="Цена">
+
+        <label for="mileage">Пробег</label>
+        <input type="text" id="mileage" name="mileage" placeholder="Пробег">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email">
+
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="Телефон">
+
+        <input type="submit" value="Отправить">
+<div id="message"></div>
+<script>
+    document.getElementById('car-registration-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // предотвращаем отправку формы
+
+        // Получаем данные из формы
+        var make = document.getElementById('make').value;
+        var model = document.getElementById('model').value;
+        var year = document.getElementById('year').value;
+        var price = document.getElementById('price').value;
+        var mileage = document.getElementById('mileage').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+
+        // Проверяем обязательные поля
+        if (!make  ||!model  ||!year  ||!price  ||!email || !phone) {
+            document.getElementById('message').innerHTML = 'Ошибка: заполните все обязательные поля!';
+            return;
+        }
+
+        // Дополнительные проверки для определенных полей (например, год должен быть числом)
+        if (isNaN(year)) {
+            document.getElementById('message').innerHTML = 'Ошибка: год должен быть числом!';
+            return;
+        }
+
+        // Отображаем данные
+        document.getElementById('message').innerHTML = 'Данные успешноотправлены:’ +
+’Марка: ’ + make + ‘’ +
+’Модель: ’ + model + ‘’ +
+’Год выпуска: ’ + year + ‘’ +
+’Цена: ’ + price + ‘’ +
+’Пробег: ’ + mileage + ‘’ +
+’Email: ’ + email + ‘’ +
+’Телефон: ’ + phone;
+
+        // Очищаем поля формы после успешной отправки
+        document.getElementById('car-registration-form').reset();
+    });
+</script>
+</form>
+</body>
+</html>
+   
